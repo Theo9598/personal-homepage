@@ -17,8 +17,11 @@
   --shadow-soft: 0 12px 36px rgba(0, 0, 0, 0.24);
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
   --sans:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+    "Aptos", "Segoe UI Variable Text", "Segoe UI", ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, sans-serif;
+  --display:
+    "Aptos Display", "Segoe UI Variable Display", "Segoe UI", ui-sans-serif,
+    system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 
   color: var(--ink);
@@ -32,7 +35,7 @@
   font-family: var(--sans);
   font-size: 16px;
   font-synthesis: none;
-  line-height: 1.5;
+  line-height: 1.55;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

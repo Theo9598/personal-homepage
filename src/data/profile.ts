@@ -25,10 +25,10 @@ export type GithubProject = {
 
 export const profile = {
   name: 'Theo Zhang',
-  tagline: 'Data Science student building practical ML systems and research-grade analytics.',
+  tagline: 'Data Science student building practical ML systems and careful analytics.',
   location: 'UC Berkeley · Berkeley, CA',
   summary:
-    'Theo Zhang is a Data Science undergraduate at UC Berkeley with experience across machine learning research, production analytics, and data-intensive project leadership. His work spans labor-market modeling, vision-language model evaluation, vehicle telemetry analysis, and systems that turn messy operational data into useful decisions.',
+    'Theo Zhang is a Data Science undergraduate at UC Berkeley who likes working where modeling, product sense, and real-world messiness meet. His work spans labor-market research, vision-language model evaluation, vehicle telemetry analysis, and small systems that make scattered information easier to act on.',
   education: {
     school: 'University of California, Berkeley',
     degree: 'B.S. Data Science',
@@ -57,7 +57,7 @@ export const profile = {
     {
       name: 'news-brief-skill',
       description:
-        'A Python-based news brief skill and automation project for collecting, filtering, and generating structured news outputs.',
+        'A Python automation project that turns noisy source streams into cleaner, structured news briefs.',
       language: 'Python',
       href: 'https://github.com/Theo9598/news-brief-skill',
       updatedAt: 'Jun 2026',
@@ -66,7 +66,7 @@ export const profile = {
     {
       name: 'gtsrb-reliability',
       description:
-        'Reliability work around AI-generated versus real image detection, connected to an IEOR 142B project and Hugging Face demo.',
+        'Reliability experiments for AI-versus-real image detection, connected to an IEOR 142B project and Hugging Face demo.',
       language: 'Python',
       href: 'https://github.com/Theo9598/gtsrb-reliability',
       updatedAt: 'Jun 2026',
@@ -74,7 +74,7 @@ export const profile = {
     },
     {
       name: 'newsnow',
-      description: 'A TypeScript project for elegant reading of real-time and trending news.',
+      description: 'A TypeScript news reader focused on making real-time and trending stories easier to scan.',
       language: 'TypeScript',
       href: 'https://github.com/Theo9598/newsnow',
       updatedAt: 'May 2026',
@@ -83,7 +83,7 @@ export const profile = {
     {
       name: 'TrendRadar',
       description:
-        'An AI-driven public opinion and trend monitor for multi-platform aggregation, RSS, filtering, alerts, and analysis briefs.',
+        'A trend-monitoring system for collecting signals across platforms, filtering noise, and producing analysis briefs.',
       language: 'AI / Monitoring',
       href: 'https://github.com/Theo9598/TrendRadar',
       updatedAt: 'May 2026',
@@ -92,7 +92,7 @@ export const profile = {
     {
       name: 'ai-vs-real-image-detector',
       description:
-        'An IEOR 142A computer vision project for detecting AI-generated versus real images with a Hugging Face Space demo.',
+        'A computer vision project that tests how well models separate AI-generated images from real ones.',
       language: 'Python',
       href: 'https://github.com/Theo9598/ai-vs-real-image-detector',
       updatedAt: 'May 2026',
@@ -100,7 +100,7 @@ export const profile = {
     },
     {
       name: 'tiny-language-model',
-      description: 'A compact language model project exploring small-scale model behavior and implementation.',
+      description: 'A compact language model project for learning how model behavior emerges from small implementations.',
       language: 'Python',
       href: 'https://github.com/Theo9598/tiny-language-model',
       updatedAt: 'Apr 2026',
@@ -108,7 +108,7 @@ export const profile = {
     },
     {
       name: 'face-physiognomy-mapper',
-      description: 'A Python project experimenting with face mapping and model-driven visual interpretation.',
+      description: 'A Python experiment around face mapping, visual features, and model-driven interpretation.',
       language: 'Python',
       href: 'https://github.com/Theo9598/face-physiognomy-mapper',
       updatedAt: 'Apr 2026',
@@ -116,7 +116,7 @@ export const profile = {
     },
     {
       name: 'customer-churn-analysis',
-      description: 'A customer churn analytics project using Python modeling and business-oriented analysis.',
+      description: 'A churn analysis project that connects Python modeling with business-facing interpretation.',
       language: 'Python',
       href: 'https://github.com/Theo9598/customer-churn-analysis',
       updatedAt: 'Mar 2026',
@@ -148,12 +148,12 @@ export const profile = {
       location: 'Shanghai',
       dates: 'Jun 2022 - Sep 2022',
       summary:
-        'Analyzed large-scale vehicle telemetry data and built automated ML-ready data pipelines for diagnostics and failure detection.',
+        'Worked with vehicle telemetry data to make diagnostics and failure patterns easier for engineering teams to analyze.',
       tags: ['Python', 'SQL', 'Telemetry', 'ML Pipelines'],
       highlights: [
-        'Built data cleaning, feature engineering, and labeling pipelines for downstream machine learning workflows.',
-        'Developed and evaluated logistic regression, random forest, and gradient boosting models for vehicle failure detection.',
-        'Created dashboards connecting customer usage patterns with system diagnostics for engineering decisions.',
+        'Built cleaning, feature engineering, and labeling pipelines for machine learning workflows.',
+        'Compared logistic regression, random forest, and gradient boosting models for failure detection.',
+        'Connected usage patterns with diagnostic signals through dashboards and analysis summaries.',
       ],
     },
     {
@@ -162,12 +162,12 @@ export const profile = {
       location: 'Jiangsu',
       dates: 'Jun 2021 - Sep 2021',
       summary:
-        'Supported production and quality analytics in a regulated manufacturing environment through SQL reporting and Python modeling.',
+        'Used SQL reporting and Python analysis to support production and quality decisions in a regulated manufacturing setting.',
       tags: ['SQL', 'Python', 'Validation', 'Operations'],
       highlights: [
-        'Queried and aggregated production and quality datasets for reporting and operational analysis.',
-        'Applied regression and time-series models to identify manufacturing workflow bottlenecks.',
-        'Wrote automated validation scripts to detect anomalies and protect dataset integrity.',
+        'Aggregated production and quality datasets for reporting and operational analysis.',
+        'Used regression and time-series methods to look for workflow bottlenecks.',
+        'Wrote validation scripts that flagged anomalies before they reached downstream reports.',
       ],
     },
   ] satisfies ProfileItem[],
@@ -178,12 +178,12 @@ export const profile = {
       location: 'Remote',
       dates: 'Dec 2024 - Present',
       summary:
-        'Research on how occupational AI exposure connects to employment outcomes across national-scale labor market data.',
+        'Researching how occupational exposure to AI may connect with employment outcomes across large labor-market datasets.',
       tags: ['Research', 'Python', 'Regression', 'LLM Capabilities'],
       highlights: [
-        'Clean and integrate labor-market datasets for publication-oriented analysis.',
-        'Build regression and ML models linking AI exposure with labor outcomes.',
-        'Engineer occupation-level features by mapping job tasks to LLM capabilities.',
+        'Clean and combine labor-market datasets for publication-oriented analysis.',
+        'Build regression and ML models that link AI exposure with labor outcomes.',
+        'Map occupation-level tasks to LLM capabilities to create more interpretable features.',
       ],
     },
     {
@@ -192,11 +192,11 @@ export const profile = {
       location: 'Jiangsu',
       dates: 'Aug 2023 - Dec 2023',
       summary:
-        'Prompt-based evaluation pipelines for image-text grounding, spatial reasoning, and contextual perception tasks.',
+        'Built prompt-based evaluation workflows for image-text grounding, spatial reasoning, and contextual perception.',
       tags: ['VLMs', 'Prompt Evaluation', 'Ablation Studies', 'Python'],
       highlights: [
         'Designed experiments to compare model behavior across prompt structures and evaluation settings.',
-        'Conducted ablation studies on prompt design, performance, and robustness.',
+        'Ran ablation studies to understand when prompt changes helped or hurt performance.',
         'Co-authored a paper accepted by IEEE Transactions on Cognitive and Developmental Systems.',
       ],
     },
@@ -206,12 +206,12 @@ export const profile = {
       location: 'Jiangsu',
       dates: 'Jan 2020 - Apr 2020',
       summary:
-        'A WeChat-based intake and coordination system for household supply needs during COVID-19 lockdowns.',
+        'A WeChat-based coordination tool that helped households communicate supply needs during COVID-19 lockdowns.',
       tags: ['WeChat', 'Civic Tech', 'Voice Input', 'Operations'],
       highlights: [
-        'Built request intake workflows that improved categorization and volunteer coordination.',
-        'Added voice-to-text input to help elderly users submit requests without typing.',
-        'Organized follow-up and real-time communication channels for delivery and health updates.',
+        'Built request intake flows that made volunteer coordination easier.',
+        'Added voice-to-text input so elderly users could submit requests without typing.',
+        'Organized follow-up channels for delivery updates and health-related communication.',
       ],
     },
   ] satisfies ProfileItem[],
@@ -222,11 +222,11 @@ export const profile = {
       location: 'Berkeley',
       dates: 'Jul 2025 - Present',
       summary:
-        'Leads campus event execution, stakeholder coordination, and feedback-driven planning for an international student organization.',
+        'Leads event planning, partner coordination, and feedback-driven improvements for an international student organization.',
       tags: ['Leadership', 'Planning', 'Analytics', 'Outreach'],
       highlights: [
-        'Manage project timelines, task delegation, and coordination with internal and external partners.',
-        'Track participation and feedback data to improve event planning and student engagement.',
+        'Manage timelines, task ownership, and communication across internal and external partners.',
+        'Use participation and feedback data to improve future events and student engagement.',
       ],
     },
   ] satisfies ProfileItem[],

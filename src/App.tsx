@@ -25,10 +25,10 @@ import { profile, type ProfileItem } from './data/profile'
 import './App.css'
 
 const views = [
-  { id: 'lab', label: 'Lab', icon: Sparkles },
-  { id: 'frames', label: 'Frames', icon: BriefcaseBusiness },
+  { id: 'lab', label: 'Home', icon: Sparkles },
+  { id: 'frames', label: 'Work', icon: BriefcaseBusiness },
   { id: 'stack', label: 'Stack', icon: BarChart3 },
-  { id: 'signal', label: 'Signal', icon: MapPin },
+  { id: 'signal', label: 'Contact', icon: MapPin },
 ] as const
 
 type ViewId = (typeof views)[number]['id']
@@ -44,42 +44,42 @@ const frameItems: FrameItem[] = [
     tags: item.tags,
     highlights: [
       item.description,
-      `Primary language or mode: ${item.language}.`,
-      'Open this project from the live repository layer.',
+      `Built mainly with ${item.language}.`,
+      'Open the repository to see how the idea is being built.',
     ],
-    category: 'GitHub',
+    category: 'Build',
     href: item.href,
   })),
   ...profile.projects.map((item) => ({ ...item, category: 'Research' })),
-  ...profile.experience.map((item) => ({ ...item, category: 'Fieldwork' })),
-  ...profile.leadership.map((item) => ({ ...item, category: 'Ops' })),
+  ...profile.experience.map((item) => ({ ...item, category: 'Experience' })),
+  ...profile.leadership.map((item) => ({ ...item, category: 'Leadership' })),
 ]
 
 const metricTiles = [
-  { label: 'Public Repos', value: '8', detail: 'Theo9598 GitHub' },
-  { label: 'Dominant Stack', value: 'Python', detail: 'ML / analytics / automation' },
-  { label: 'Live Thread', value: 'News + AI', detail: 'Trend, brief, detector projects' },
+  { label: 'Published Repos', value: '8', detail: 'Projects kept public and inspectable' },
+  { label: 'Main Language', value: 'Python', detail: 'Modeling, automation, and analysis' },
+  { label: 'Current Thread', value: 'News + AI', detail: 'Monitoring, briefs, and detectors' },
 ]
 
 const glyphs = ['Python', 'SQL', 'VLM', 'AUC', 'Berkeley', 'PyTorch', 'AI x Labor', 'Telemetry']
 
 const heroSignals = [
-  { label: 'Base', value: 'Berkeley DS' },
-  { label: 'Mode', value: 'ML + Analytics' },
-  { label: 'Feed', value: 'GitHub Live' },
+  { label: 'School', value: 'Berkeley DS' },
+  { label: 'Focus', value: 'ML + Analytics' },
+  { label: 'Now', value: 'Building in public' },
 ]
 
 const stackSignals = [
-  { label: 'Groups', value: `${profile.skills.length}` },
-  { label: 'Core', value: 'Python / SQL' },
-  { label: 'Models', value: 'PyTorch / sklearn' },
-  { label: 'Repos', value: `${profile.githubProjects.length}` },
+  { label: 'Skill Areas', value: `${profile.skills.length}` },
+  { label: 'Core', value: 'Python + SQL' },
+  { label: 'Modeling', value: 'PyTorch / sklearn' },
+  { label: 'Public Work', value: `${profile.githubProjects.length} repos` },
 ]
 
 const signalSignals = [
   { label: 'Location', value: 'Berkeley, CA' },
-  { label: 'Channel', value: 'Email + LinkedIn' },
-  { label: 'Focus', value: 'Research / ML' },
+  { label: 'Best For', value: 'Research / ML' },
+  { label: 'Reply Via', value: 'Email + LinkedIn' },
 ]
 
 function usePointerField() {
@@ -373,12 +373,12 @@ function StackHeader() {
       <PanelHeading
         eyebrow="Stack"
         icon={BarChart3}
-        title="A living instrument panel for Theo's toolkit."
+        title="Tools I use to turn uncertain data into working systems."
       />
       <div className="stack-orbit" aria-label="Stack signal map">
         <div className="stack-orbit__core">
-          <span>Active</span>
-          <strong>ML Systems</strong>
+          <span>Style</span>
+          <strong>Build, test, explain</strong>
         </div>
         {stackSignals.map((signal, index) => (
           <div
@@ -400,13 +400,13 @@ function SignalHeader() {
     <HeaderMatrix variant="signal">
       <div className="signal-copy">
         <PanelHeading
-          eyebrow="Signal"
+          eyebrow="Contact"
           icon={MapPin}
-          title="Open to research, analytics, and ML opportunities."
+          title="Open to thoughtful research, analytics, and ML work."
         />
         <p>
-          Reach out for collaborations, internships, research conversations, or
-          data-intensive projects.
+          If the work involves messy data, careful modeling, or a question worth
+          investigating, I would be glad to hear about it.
         </p>
       </div>
       <div className="signal-console" aria-label="Contact readiness signals">
@@ -418,7 +418,7 @@ function SignalHeader() {
           </div>
         ))}
         <a className="signal-console__action" href={profile.contacts[0].href}>
-          Send Signal
+          Email Theo
           <Mail size={16} aria-hidden="true" />
         </a>
       </div>
@@ -441,7 +441,7 @@ function LabPanel({
     <section className="panel panel--lab" aria-label="Interactive lab panel">
       <div className="lab-hero">
         <div className="hero-title-grid">
-          <PanelHeading eyebrow="GitHub As Interface" icon={Sparkles} title={profile.name} />
+          <PanelHeading eyebrow="Selected work, live" icon={Sparkles} title={profile.name} />
           <div className="identity-array" aria-label="Theo Zhang identity signals">
             <div className="identity-array__ring" aria-hidden="true">
               <span />
@@ -470,16 +470,16 @@ function LabPanel({
           ))}
         </div>
         <p className="tagline">
-          Public repos, ML experiments, news systems, and analytics work rearranged as
-          a live field.
+          I build practical ML and data systems for problems that are too messy
+          to solve with a single dashboard.
         </p>
         <div className="hero-actions">
           <button onClick={() => setActiveView('frames')} type="button">
-            Open Frame Deck
+            Explore Work
             <ArrowUpRight size={16} aria-hidden="true" />
           </button>
           <a href={profile.contacts[0].href}>
-            Send Signal
+            Email Theo
             <Mail size={16} aria-hidden="true" />
           </a>
         </div>
@@ -504,12 +504,12 @@ function LabPanel({
       </div>
 
       <div className="floating-brief">
-        <span>Selected Repository / Frame</span>
+        <span>Currently highlighted</span>
         <strong>{activeItem.title}</strong>
         <p>{activeItem.summary}</p>
         {activeItem.href && (
           <a href={activeItem.href} rel="noreferrer" target="_blank">
-            Visit GitHub
+            View on GitHub
             <ArrowUpRight size={16} aria-hidden="true" />
           </a>
         )}
@@ -666,7 +666,7 @@ function App() {
 
       <main className="viewport-panel" id="app">
         <div className="viewport-topbar">
-          <span>{activeView.toUpperCase()} / LIVE FIELD</span>
+          <span>Theo Zhang / {views.find((view) => view.id === activeView)?.label}</span>
           <div>
             <button
               aria-label="Previous frame"
@@ -701,7 +701,7 @@ function App() {
 
       <aside className="inspector-panel" aria-label="Active frame inspector">
         <div className="inspector-header">
-          <span>Selected Frame</span>
+          <span>Now Viewing</span>
           <strong>{String(activeFrame + 1).padStart(2, '0')}</strong>
         </div>
         <FrameDetail compact item={activeItem} />

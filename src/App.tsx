@@ -1,6 +1,7 @@
 import {
   type CSSProperties,
   type Dispatch,
+  type ReactNode,
   type SetStateAction,
   useEffect,
   useRef,
@@ -66,6 +67,19 @@ const heroSignals = [
   { label: 'Base', value: 'Berkeley DS' },
   { label: 'Mode', value: 'ML + Analytics' },
   { label: 'Feed', value: 'GitHub Live' },
+]
+
+const stackSignals = [
+  { label: 'Groups', value: `${profile.skills.length}` },
+  { label: 'Core', value: 'Python / SQL' },
+  { label: 'Models', value: 'PyTorch / sklearn' },
+  { label: 'Repos', value: `${profile.githubProjects.length}` },
+]
+
+const signalSignals = [
+  { label: 'Location', value: 'Berkeley, CA' },
+  { label: 'Channel', value: 'Email + LinkedIn' },
+  { label: 'Focus', value: 'Research / ML' },
 ]
 
 function usePointerField() {
@@ -343,6 +357,75 @@ function PanelHeading({
   )
 }
 
+function HeaderMatrix({
+  children,
+  variant,
+}: {
+  children: ReactNode
+  variant: 'stack' | 'signal'
+}) {
+  return <div className={`header-matrix header-matrix--${variant}`}>{children}</div>
+}
+
+function StackHeader() {
+  return (
+    <HeaderMatrix variant="stack">
+      <PanelHeading
+        eyebrow="Stack"
+        icon={BarChart3}
+        title="A living instrument panel for Theo's toolkit."
+      />
+      <div className="stack-orbit" aria-label="Stack signal map">
+        <div className="stack-orbit__core">
+          <span>Active</span>
+          <strong>ML Systems</strong>
+        </div>
+        {stackSignals.map((signal, index) => (
+          <div
+            className="stack-node"
+            key={signal.label}
+            style={{ '--node-index': index } as CSSProperties}
+          >
+            <span>{signal.label}</span>
+            <strong>{signal.value}</strong>
+          </div>
+        ))}
+      </div>
+    </HeaderMatrix>
+  )
+}
+
+function SignalHeader() {
+  return (
+    <HeaderMatrix variant="signal">
+      <div className="signal-copy">
+        <PanelHeading
+          eyebrow="Signal"
+          icon={MapPin}
+          title="Open to research, analytics, and ML opportunities."
+        />
+        <p>
+          Reach out for collaborations, internships, research conversations, or
+          data-intensive projects.
+        </p>
+      </div>
+      <div className="signal-console" aria-label="Contact readiness signals">
+        <div className="signal-console__beam" aria-hidden="true" />
+        {signalSignals.map((signal) => (
+          <div className="signal-line" key={signal.label}>
+            <span>{signal.label}</span>
+            <strong>{signal.value}</strong>
+          </div>
+        ))}
+        <a className="signal-console__action" href={profile.contacts[0].href}>
+          Send Signal
+          <Mail size={16} aria-hidden="true" />
+        </a>
+      </div>
+    </HeaderMatrix>
+  )
+}
+
 function LabPanel({
   activeFrame,
   setActiveFrame,
@@ -463,11 +546,7 @@ function FramesPanel({
 function StackPanel() {
   return (
     <section className="panel panel--stack" aria-label="Skills panel">
-      <PanelHeading
-        eyebrow="Stack"
-        icon={BarChart3}
-        title="A living instrument panel for Theo's toolkit."
-      />
+      <StackHeader />
       <div className="stack-grid">
         {profile.skills.map((skillGroup, index) => (
           <article
@@ -494,17 +573,7 @@ function StackPanel() {
 function SignalPanel() {
   return (
     <section className="panel panel--signal" aria-label="Contact and profile panel">
-      <div className="signal-copy">
-        <PanelHeading
-          eyebrow="Signal"
-          icon={MapPin}
-          title="Open to research, analytics, and ML opportunities."
-        />
-        <p>
-          Reach out for collaborations, internships, research conversations, or
-          data-intensive projects.
-        </p>
-      </div>
+      <SignalHeader />
       <div className="profile-grid">
         <article className="profile-card">
           <GraduationCap size={20} aria-hidden="true" />

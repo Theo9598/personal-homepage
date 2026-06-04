@@ -62,6 +62,12 @@ const metricTiles = [
 
 const glyphs = ['Python', 'SQL', 'VLM', 'AUC', 'Berkeley', 'PyTorch', 'AI x Labor', 'Telemetry']
 
+const heroSignals = [
+  { label: 'Base', value: 'Berkeley DS' },
+  { label: 'Mode', value: 'ML + Analytics' },
+  { label: 'Feed', value: 'GitHub Live' },
+]
+
 function usePointerField() {
   const [pointer, setPointer] = useState({ x: 0.5, y: 0.5 })
 
@@ -351,7 +357,35 @@ function LabPanel({
   return (
     <section className="panel panel--lab" aria-label="Interactive lab panel">
       <div className="lab-hero">
-        <PanelHeading eyebrow="GitHub As Interface" icon={Sparkles} title={profile.name} />
+        <div className="hero-title-grid">
+          <PanelHeading eyebrow="GitHub As Interface" icon={Sparkles} title={profile.name} />
+          <div className="identity-array" aria-label="Theo Zhang identity signals">
+            <div className="identity-array__ring" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </div>
+            <div className="identity-array__rows">
+              {heroSignals.map((signal) => (
+                <div className="identity-row" key={signal.label}>
+                  <span>{signal.label}</span>
+                  <strong>{signal.value}</strong>
+                </div>
+              ))}
+            </div>
+            <div className="identity-pulse">
+              <span>{activeItem.category}</span>
+              <strong>{activeItem.title}</strong>
+            </div>
+          </div>
+        </div>
+        <div className="hero-chip-cloud" aria-label="Current focus tags">
+          {activeItem.tags.slice(0, 5).map((tag, index) => (
+            <span key={tag} style={{ '--chip-index': index } as CSSProperties}>
+              {tag}
+            </span>
+          ))}
+        </div>
         <p className="tagline">
           Public repos, ML experiments, news systems, and analytics work rearranged as
           a live field.
